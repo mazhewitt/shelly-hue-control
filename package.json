@@ -1,0 +1,26 @@
+{
+  "name": "shelly-hue-control",
+  "version": "1.0.0",
+  "description": "A library to toggle hue lights with Shelly 1 controllers",
+  "main": "index.js",
+  "scripts": {
+    "test": "/toggle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mazhewitt/shelly-hue-control.git"
+  },
+  "keywords": [
+    "shelly",
+    "hue",
+    "light",
+    "automation",
+    "IOT"
+  ],
+  "author": "Mazda Hewitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mazhewitt/shelly-hue-control/issues"
+  },
+  "homepage": "https://github.com/mazhewitt/shelly-hue-control#readme"
+}
