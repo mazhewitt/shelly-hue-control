@@ -24,7 +24,14 @@
   },
   "homepage": "https://github.com/mazhewitt/shelly-hue-control#readme",
   "dependencies": {
+    "async-prompt": "^1.0.1",
     "express": "^4.17.1",
-    "method-override": "^3.0.0"
+    "method-override": "^3.0.0",
+    "node-hue-api": "^5.0.0-beta.2",
+    "node-persist": "^3.1.0",
+    "prompt": "^1.1.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.3"
   }
 }
