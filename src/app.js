@@ -45,7 +45,7 @@ app.get('/index/groups/', async function (req, res) {
   });
 
 
-app.listen(8081, async () => {
+app.listen(8080, async () => {
     await bridgeConfig.init()
     username = await bridgeConfig.getStoredUsername()
     host = await bridge_utils.discoverBridge();
