@@ -9,31 +9,31 @@ const bridgeConfig = require ('./bridge-config.js');
 let username =  ""
 let host = ""
 let localApi = {}
-const GROUP_ID = 0;
+
 
 
 app.get('/toggle/:light', async function (req, res) {
-    details = ""
-    GROUP_NAME = req.params.light
-    matchedGroups = await localApi.groups.getGroupByName(GROUP_NAME)
+    response = ""
+    group_name = req.params.light
+    matchedGroups = await localApi.groups.getGroupByName(group_name)
+    groupState = ""
     if (matchedGroups && matchedGroups.length > 0) {
       // Iterate over the light objects showing details
       matchedGroups.forEach(group => {
         if (group.state.any_on){
-          const groupState = new GroupLightState().off()
-          localApi.groups.setGroupState(group.id, groupState);
+          groupState = new GroupLightState().off()
         }
         else{
-          const groupState = new GroupLightState().on()
-          localApi.groups.setGroupState(group.id, groupState);
+          groupState = new GroupLightState().on()
         }
-        details = group.toStringDetailed()
+        localApi.groups.setGroupState(group.id, groupState);
+        response = group.toStringDetailed()
       });
     } else {
-     details = `No groups found with names that match: '${GROUP_NAME}'`
-     console.log(details);
+     details = `No groups found with names that match: '${group_name}'`
+     console.log(response);
     }
-    res.send(details)
+    res.send(response)
   });
 
 app.get('/index/groups/', async function (req, res) {
